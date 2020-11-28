@@ -25,7 +25,7 @@
                 <h3>Teacher</h3>
                 <br>
                 <div>
-                    <div class="controll active">Lớp học đã tạo</a></div>
+                    <div class="controll active">Lớp học đã tạo</div>
                     <div class="controll"><a class="no-decor" href="student_pending.php">Sinh viên đang chờ duyệt</a></div>
                     <br>
                     <br>

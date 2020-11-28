@@ -62,3 +62,47 @@
 .flex-grow {
     flex-grow: 1;
 }
+
+.s-lg {
+    font-size: 30pt;
+}
+
+.d-flex-horizon{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-cover {
+    position: relative;
+    height: 200px;
+}
+
+.cover-image{
+    z-index: -100;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    filter: blur(2px);
+}
+
+.class-title {
+    color: white;
+}
+
+.controll-bar {
+    justify-content: center;
+}
+
+.controll-bar div {
+    margin: 12px;
+}
+
+.controll-title{
+    cursor: pointer;
+    font-size: 15pt;
+}
+
+.controll-title.active{
+    font-weight: bold;
+}

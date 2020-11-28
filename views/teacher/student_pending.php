@@ -87,7 +87,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Thao tác này không thể khôi phục, chắc chắn cho phép tham gia?
+                    Thao tác này không thể hoàn lại, chắc chắn cho phép tham gia?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
@@ -107,7 +107,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Thao tác này không thể khôi phục, chắc chắn không cho tham gia?
+                    Thao tác này không thể hoàn lại, chắc chắn không cho tham gia?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
