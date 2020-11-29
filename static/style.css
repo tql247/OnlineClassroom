@@ -127,7 +127,8 @@
 }
 
 .feed-item {
-    max-width: 750px;
+    width: 750px;
+    max-width: 100%;
 }
 
 .centroid {
@@ -135,6 +136,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 .s-sm {
     font-size: 15pt;

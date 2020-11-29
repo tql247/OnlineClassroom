@@ -47,7 +47,7 @@
 					<div class="list-group">
 						<div class="mb-1 list-group-item list-group-item-action flex-column align-items-start">
 							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">
+								<h5 class="mb-1 target_user" data-user-id="<?= $user["id"] ?>">
 									<?= $user["fullname"] ?>
 								</h5>
 								<small>
@@ -60,11 +60,11 @@
 								<div>Phone: <?= $user["phone"] ?></div>
 							</div>
 							<br>
-							<select class="custom-select">
+							<select class="custom-select set-role">
 								<option selected>Phân quyền</option>
-								<option value="1">Admin</option>
-								<option value="2">Giảng viên</option>
-								<option value="3">Học viên</option>
+								<option value="Admin">Admin</option>
+								<option value="Teacher">Giảng viên</option>
+								<option value="Student">Học viên</option>
 							</select>
 						</div>
 					</div>
@@ -72,6 +72,30 @@
 			</div>
 		</div>
 	</main>
+
+    <!-- Modal Group-->
+    <div class="modal fade" id="confirmSetRole" tabindex="-1" role="dialog" aria-labelledby="confirmSetRoleLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmSetRoleLabel">Xoá khoá học?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+				</div>
+				<input type="text" class="target-user">
+                <div class="modal-body">
+                    Thao tác này không thể hoàn lại, chắc chắn cấp cho <span class="c-danger target-set-role"></span> quyền <span class="c-danger set-role-name"></span>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-danger">Xoá</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Group-->
+	
 
 	<!-- Bootstrap CDN -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
