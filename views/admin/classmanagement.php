@@ -49,11 +49,11 @@
                     <?php
                     require_once('../../connection/connector.php');
 
-                    $list_class = $connFilm->query("SELECT * FROM class");
+                    $list_class = $conn->query("SELECT * FROM class");
                     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
                     ?>
                         <div class="card card-item" style="width: 18rem;">
-                            <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/Nsnd1t1itF_nl5CfsOPki-uuE1zhSQS5X6I6_3-19b3s-szP1yWcwG0gKRL_oAYsXmHftOuQ6_HWC9B5REtyrRLJ3nL-phLGtM4khhiD2MJfwhiT3V5TylAJ59GEgwMitBxq6id8sZ7gHqOEjV31Sed175Sm8OaXDmDp" alt="Card image cap">
+                            <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $class["class_name"] ?></h5>
 

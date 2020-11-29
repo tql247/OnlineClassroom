@@ -106,3 +106,36 @@
 .controll-title.active{
     font-weight: bold;
 }
+
+.s-md {
+    font-size: 20pt;
+}
+
+.float-right{
+    position: absolute;
+    right: 15px;
+    top:  0;
+}
+
+.c-danger {
+    color: red;
+}
+
+.d-middle {
+    display: flex;
+    justify-content: center;
+}
+
+.feed-item {
+    max-width: 750px;
+}
+
+.centroid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-sm {
+    font-size: 15pt;
+}

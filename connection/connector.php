@@ -4,5 +4,5 @@
 	$Password = "";
 	$Database = "online_classroom";
 
-	$connFilm = new mysqli($Servername, $Username, $Password, $Database);
+	$conn = new mysqli($Servername, $Username, $Password, $Database);
 ?>

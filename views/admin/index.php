@@ -40,7 +40,7 @@
 				<?php
 				require_once('../../connection/connector.php');
 
-				$list_user = $connFilm->query("SELECT * FROM user");
+				$list_user = $conn->query("SELECT * FROM user");
 				while ($list_user->num_rows > 0 && $user = $list_user->fetch_assoc()) {
 				?>
 
