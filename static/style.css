@@ -137,7 +137,10 @@
     justify-content: center;
 }
 
-
 .s-sm {
     font-size: 15pt;
+}
+
+.p-absolute {
+    position: absolute;
 }

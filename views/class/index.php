@@ -74,7 +74,12 @@
                                             <div class="w-100 mb-3">
                                                 <h4 class="mb-1"><?= $feed["title"] ?></h4>
                                                 <!-- <small>Thời gian đăng</small> -->
-                                                <div class="float-right s-md controll">...</div>
+                                                <div class="float-right s-md controll">
+                                                    <div>...</div>
+                                                    <div class="p-absolute">
+                                                        aaa
+                                                    </div>
+                                                </div>
                                             </div>
                                             <p class="mb-3">
                                                 <?= $feed["description"] ?>    

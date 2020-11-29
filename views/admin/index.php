@@ -33,17 +33,13 @@
 
 			<div class="app-view-controll">
 				<h3>Danh sách người dùng</h3>
-
 				<br>
-
-
 				<?php
 				require_once('../../connection/connector.php');
 
 				$list_user = $conn->query("SELECT * FROM user");
 				while ($list_user->num_rows > 0 && $user = $list_user->fetch_assoc()) {
 				?>
-
 					<div class="list-group">
 						<div class="mb-1 list-group-item list-group-item-action flex-column align-items-start">
 							<div class="d-flex w-100 justify-content-between">
