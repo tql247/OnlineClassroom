@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../static/style.css">
 
     <!-- <link rel="icon" href="images/logobar.png"> -->
-    <title>Stream</title>
+    <title>Class management</title>
 </head>
 
 <body>
@@ -55,78 +55,63 @@
                                 <div class="d-middle">
                                     <?php if (1) { ?>
                                         <div>
-                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addFeed">Thêm bài mới</button>
+                                            <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#addFeed">Thêm bài mới</button>
                                             <hr>
                                         </div>
                                     <?php } ?>
                                 </div>
 
                                 <div class="list-group">
-                                    <?php
-                                    require_once('../../connection/connector.php');
-
-                                    $list_feed = $conn->query("SELECT * FROM feed
-                                                               WHERE `class_id` = 2");
-                                    $conn->close();
-                                    while ($list_feed->num_rows > 0 && $feed = $list_feed->fetch_assoc()) {
-                                    ?>
-                                        <div class="feed-item list-group-item flex-column align-items-start">
-                                            <div class="w-100 mb-3">
-                                                <h4 class="mb-1"><?= $feed["title"] ?></h4>
-                                                <!-- <small>Thời gian đăng</small> -->
-                                                <div class="float-right s-md controll">
-                                                    <div>...</div>
-                                                    <div class="p-absolute">
-                                                        aaa
-                                                    </div>
-                                                </div>
+                                    <div class="feed-item list-group-item flex-column align-items-start">
+                                        <div class="w-100 mb-3">
+                                            <h4 class="mb-1">Tiêu đề</h4>
+                                            <small>Thời gian đăng</small>
+                                            <div class="float-right s-md controll">...</div>
+                                        </div>
+                                        <p class="mb-3">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magni quo at vel incidunt alias numquam necessitatibus quasi, consectetur, sunt dolorum? Distinctio, qui magnam excepturi architecto officia voluptatum deserunt in?
+                                        </p>
+                                        <div>
+                                            <img src="../../storage/images/download.png" alt="">
+                                        </div>
+                                        <hr>
+                                        <div class="cmt mt-1">
+                                            <div class="title mb-4">
+                                                <h5>Thảo luận</h5>
                                             </div>
-                                            <p class="mb-3">
-                                                <?= $feed["description"] ?>    
-                                            </p>
-                                            <div>
-                                                <img width="100%" src="<?= $feed["attach"] ?>" alt="">
-                                            </div>
-                                            <hr>
-                                            <div class="cmt mt-1">
-                                                <div class="title mb-4">
-                                                    <h5>Thảo luận</h5>
-                                                </div>
-                                                <div class="cmt-section">
-                                                    <div class="ls-cmt">
-                                                        <div class="cmt">
-                                                            <div class="list-group-item flex-column align-items-start mb-3">
-                                                                <div class="d-flex w-100 justify-content-between">
-                                                                    <h6>Tên người thảo luận</h6>
-                                                                    <?php if (1) { ?>
-                                                                        <span class="s-sm float-right controll">...</span>
-                                                                    <?php } ?>
-                                                                </div>
-                                                                <div>
-                                                                    <span>
-                                                                        Nội dung thảo luận
-                                                                    </span>
-                                                                </div>
+                                            <div class="cmt-section">
+                                                <div class="ls-cmt">
+                                                    <div class="cmt">
+                                                        <div class="list-group-item flex-column align-items-start mb-3">
+                                                            <div class="d-flex w-100 justify-content-between">
+                                                                <h6>Tên người thảo luận</h6>
+                                                                <?php if (1) { ?>
+                                                                    <span class="s-sm float-right controll">...</span>
+                                                                <?php } ?>
+                                                            </div>
+                                                            <div>
+                                                                <span>
+                                                                    Nội dung thảo luận
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <hr>
-                                                    <div class="new-cmt">
-                                                        <div class="input-group mb-1">
-                                                            <input type="text" class="form-control" placeholder="Nhập thảo luận mới" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                                            <div class="input-group-append">
-                                                                <button class="btn btn-secondary centroid" type="button">
-                                                                    <span class="material-icons s-sm">
-                                                                        send
-                                                                    </span>
-                                                                </button>
-                                                            </div>
+                                                </div>
+                                                <div class="new-cmt">
+                                                    <div class="input-group mb-1">
+                                                        <input type="text" class="form-control" placeholder="Nhập thảo luận mới" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-secondary centroid" type="button">
+                                                                <span class="material-icons">
+                                                                    send
+                                                                </span>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
