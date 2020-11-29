@@ -52,20 +52,20 @@
                     $list_class = $conn->query("SELECT * FROM class");
                     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
                     ?>
-                        <div class="card card-item" style="width: 18rem;">
+                        <div class="card card-item" id="class_id_<?= $class["id"] ?>" style="width: 18rem;">
                             <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $class["class_name"] ?></h5>
+                                <h5 class="card-title class_name"><?= $class["class_name"] ?></h5>
 
                                 <div>
-                                    <div>Môn: <?= $class["course_name"] ?></div>
-                                    <div>Phòng: <?= $class["class_room"] ?></div>
-                                    <div>Code: <?= $class["class_code"] ?></div>
+                                    <div >Môn: <span class="course_name"><?= $class["course_name"] ?> </span></div>
+                                    <div>Phòng: <span class="class_room"> <?= $class["class_room"]?></span></div>
+                                    <div>Code: <span class="class_code" ><?= $class["class_code"] ?></span></div>
                                 </div>
                                 <div class="btn-full mt-1">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editClass" data-whatever="<?= $class["id"] ?>">
-                                        Chỉnh sửa
-                                    </button>
+                                        <button type="button" name="idClass " class="btn btn-warning" data-toggle="modal" data-target="#editClass" data-whatever="<?= $class["id"] ?>">
+                                            Chỉnh sửa
+                                        </button>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteClass" data-whatever="<?= $class["id"] ?>">
                                         Xoá
                                     </button>
@@ -89,8 +89,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                
                 <div class="modal-body">
-                    <form>
+                    
+                        
                         <div class="form-group">
                             <label for="class-name" class="col-form-label">Tên lớp:</label>
                             <input type="text" class="form-control" id="class-name">
@@ -111,12 +113,15 @@
                             <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
                             <input type="file" class="form-control" id="class-cover">
                         </div>
-                    </form>
-                </div>
+                    </div>
                 <div class="modal-footer">
+                    
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-primary">Thêm</button>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                
                 </div>
+                
+                
             </div>
         </div>
     </div>
@@ -130,34 +135,36 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form action="../../service/updateClass.php" method="POST" >
                 <div class="modal-body">
-                    <form>
+                        <input type="hidden" class="id_class" name="id_class" value="">
                         <div class="form-group">
-                            <label for="class-name" class="col-form-label">Tên lớp:</label>
-                            <input type="text" class="form-control" id="class-name">
+                            <label for="class-name" class="col-form-label ">Tên lớp:</label>
+                            <input type="text" name="class_name_update" class="form-control class-name class_name_update">
                         </div>
                         <div class="form-group">
                             <label for="course-name" class="col-form-label">Tên môn:</label>
-                            <input type="text" class="form-control" id="course-name">
+                            <input type="text" name="class_course_update" class="form-control course-name class_course_update" >
                         </div>
                         <div class="form-group">
                             <label for="class-room" class="col-form-label">Tên phòng:</label>
-                            <input type="text" class="form-control" id="class-room">
+                            <input type="text" name="class_room_update" class="form-control class-room class_room_update" >
                         </div>
                         <div class="form-group">
                             <label for="class-code" class="col-form-label">CODE:</label>
-                            <input type="text" class="form-control" id="class-code">
+                            <input type="text" name="class_code_update" class="form-control class-code class_code_update" >
                         </div>
                         <div class="form-group">
                             <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
-                            <input type="file" class="form-control" id="class-cover">
+                            <input type="file" class="form-control class-cover class_cover_update" >
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-primary">Sửa</button>
+                    <button type="submit" class="btn btn-primary">Sửa</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -176,7 +183,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-danger">Xoá</button>
+                    <form method="POST" action="deleteClass.php">
+                        <input type="hidden" class="id_class_delete" name="id_class_delete">
+                        <button type="submit" class="btn btn-danger">Xoá</button>
+                    </form>
                 </div>
             </div>
         </div>
