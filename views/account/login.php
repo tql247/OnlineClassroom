@@ -27,9 +27,9 @@
             <a href="forgotpwd.php" >Quên mật khẩu</a>
             </br>
             <br>
-            <input type="submit" name="" class="hv-3d-lam account-btn bg-lam" value="Login"></br>
+            <input type="submit" name="" class="lam-input hv-3d-lam account-btn bg-lam" value="Login"></br>
             <a href="register.php">
-                <input type="button" class="hv-3d account-btn bg-white c-lam shadow-soft" value="Đăng ký"></br>
+                <input type="button" class="lam-input hv-3d account-btn bg-white c-lam shadow-soft" value="Đăng ký"></br>
             </a>
             </form>
     </div>

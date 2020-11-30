@@ -25,7 +25,7 @@
             </div>
             <div>
                 <label for="birth">Ngày sinh</label>
-                <input type="date" id="birth" name="birth"></br>
+                <input type="date" id="birth" name="birth" class="lam-input"></br>
             </div>
             <div class="form-group">
                 <label for="Email">Địa chỉ Email</label>
@@ -44,7 +44,7 @@
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="Mật khẩu">
             </div>
             <div>
-                <input type="submit" class="account-btn hv-3d-lam bg-lam" name="" value="Đăng kí">
+                <input type="submit" class="lam-input account-btn hv-3d-lam bg-lam" name="" value="Đăng kí">
             </div>
             <a href="login.php" class="form-check-label">Trở lại đăng nhập</a>
         </form>

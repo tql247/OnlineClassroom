@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../static/style.css">
 </head>
-<body>
+<body class="centroid">
     <div class="forgotbox">
         <form method="post" action="" >
             <div class="imgcontainer">
@@ -21,7 +21,7 @@
                 <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp" placeholder="Nhập email">
             </div>
 
-            <input type="submit" class="account-btn hv-3d-lam bg-lam" name="" value="Lấy lại mật khẩu">
+            <input type="submit" class="account-btn hv-3d-lam bg-lam lam-input" name="" value="Lấy lại mật khẩu">
             <a href="login.php" class="form-check-label">Trở lại đăng nhập</a>
         </form>
     </div>

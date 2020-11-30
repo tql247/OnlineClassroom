@@ -205,10 +205,6 @@ body {
   height: 370px;
   background: white;
   color: rgb(51, 92, 153);
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
   border-radius: 3%;
@@ -243,8 +239,7 @@ h1 {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="password"] {
+.lam-input-text,.lam-input-pwd {
   border: none;
   border-bottom: 1px solid rgb(49, 100, 158);
   background: transparent;
@@ -266,7 +261,7 @@ input.account-btn {
   background: #3060a8;
 }
 
-input {
+.lam-input {
   width: 100%;
   margin-bottom: 20px;
 }
