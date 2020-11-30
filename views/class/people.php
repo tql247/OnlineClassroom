@@ -12,35 +12,17 @@
     <link rel="stylesheet" href="../../static/style.css">
 
     <!-- <link rel="icon" href="images/logobar.png"> -->
-    <title>Class management</title>
+    <title>Danh sách học viên</title>
 </head>
 
 <body>
 
     <main class="container">
-        <div class="headerr mt-3 d-flex d-flex-horizon">
-            <div>
-                <a class="no-decor mt-3" href="../index.php">
-                    <span class="material-icons s-lg">
-                        home
-                    </span>
-                </a>
-            </div>
-            <div class="controll logout-btn">Đăng xuất</div>
-        </div>
+        <?php require("../../component/class_header.php") ?>
         <br>
         <div class="app-view">
             <div class="app-view-controll">
-                <div class="class-cover">
-                    <div class="cover-image">
-                        <img width="100%" height="auto" src="https://media.sproutsocial.com/uploads/2017/03/Facebook-Event-Photo.png" alt="">
-                    </div>
-                    <div class="p-3">
-                        <h2 class="class-title">Tên lớp học</h2>
-                        <h5 class="class-title">Tên môn học</h5>
-                        <!-- <h4 class="class-title">Giảng viên</h4> -->
-                    </div>
-                </div>
+                <?php require("../../component/class_cover.php") ?>
                 <br>
 
                 <div class="content">
@@ -49,7 +31,6 @@
                         <div class="controll-title active">Học viên</div>
                     </div>
                     <hr>
-                    <br>
                     <br>
                     <div>
                         <div>
@@ -76,7 +57,7 @@
                                     <div class="list-group-item flex-column align-items-start mb-3">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h5><?= $user["fullname"] ?></h5>
-                                            <span data-target="#confirmKickStudent" data-whatever="<?= $user["id"] .'-'. 2 ?>" data-toggle="modal" class="controll s-md float-right c-danger">&times;</span>
+                                            <span data-target="#confirmKickStudent" data-whatever="<?= $user["id"] . '-' . 2 ?>" data-toggle="modal" class="controll s-md float-right c-danger">&times;</span>
                                         </div>
                                         <div>
                                             <span>Email: <?= $user["email"] ?></span>
@@ -94,25 +75,7 @@
 
 
     <!-- Modal Group-->
-    <div class="modal fade" id="confirmKickStudent" tabindex="-1" role="dialog" aria-labelledby="confirmKickStudentLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmKickStudentLabel">Đuổi học viên?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thao tác này không thể khôi phục, chắc chắn đuổi học viên?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-danger">Đuổi</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require("../../component/modals/confirm_kick.php") ?>
     <!-- Modal Group-->
 
 

@@ -126,6 +126,12 @@
   justify-content: center;
 }
 
+.d-centroid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .feed-item {
   max-width: 750px;
 }
@@ -315,4 +321,20 @@ hv-w:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.x-center {
+  display: flex;
+  align-items: center;
+}
+
+.btn-float-right {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.w-100{
+  width: 100%;
 }
