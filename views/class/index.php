@@ -94,7 +94,7 @@
                                                                     Nội dung thảo luận
                                                                 </span>
                                                             </div>
-                                                        </div>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                                 <div class="new-cmt">

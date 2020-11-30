@@ -32,3 +32,22 @@ $("#confirmKickStudent").on("show.bs.modal", function (event) {
   var modal = $(this);
   modal.find(".modal-title").text("New message to " + recipient);
 });
+
+$(".open-extend-controll").on("click", function(e) {
+  if($(e.target).next().hasClass("active")) {
+    $(e.target).next().removeClass("active");
+  } else {
+    $(e.target).next().addClass("active");
+  }
+});
+
+$('.set-role').on('change', function(e){
+  let data = $(e.target).find('option:selected').val();
+  const targetName = $(e.target).parent().find(".target_user").text().trim();
+  const targetUserId = $(e.target).parent().find(".target_user").data("user-id");
+  $("#confirmSetRole").find(".target-set-role").text(targetName);
+  $("#confirmSetRole").find(".target-user").val(targetUserId);
+  $("#confirmSetRole").find(".set-role-name").text(data);
+  $("#confirmSetRole").modal()
+});
+
