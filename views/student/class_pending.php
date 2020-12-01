@@ -40,8 +40,9 @@
                     <?php
 
                     require_once('../../connection/connector.php');
+                    session_start();
 
-                    $list_class = $conn->query("SELECT * FROM class_pending WHERE `user_id` = 2");
+                    $list_class = $conn->query("SELECT * FROM user_class WHERE `user_id` = " . $_SESSION["Id_User"] . " AND `status` = 'c'");
                     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
                         $class_detail = $conn->query("SELECT * FROM class WHERE `id` = " . $class["class_id"])->fetch_assoc();
                     ?>
@@ -54,7 +55,7 @@
                                     <div>Phòng: <?= $class_detail["class_room"] ?></div>
                                 </div>
                                 <div class="btn-full mt-1">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#confirmJoinClass" data-whatever="<?= $class_detail["id"] ?>">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#confirmJoinClass" data-class-id="<?= $class_detail["id"] ?>" data-user-id="<?= $_SESSION["Id_User"] ?>">
                                         Tham gia
                                     </button>
                                 </div>
@@ -68,25 +69,7 @@
 
 
     <!-- Modal Group-->
-    <div class="modal fade" id="confirmJoinClass" tabindex="-1" role="dialog" aria-labelledby="confirmJoinClassLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmJoinClassLabel">Tham gia khoá học?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thao tác này không thể khôi phục, chắc chắn tham gia?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-info">Tham gia</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require("../../component/modals/confirm_join_class.php") ?>
     <!-- Modal Group-->
 
 

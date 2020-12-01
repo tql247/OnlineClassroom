@@ -7,26 +7,28 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form action="../../service/updateFeed.php" method="POST">
             <div class="modal-body">
-                <form>
+                    <input type="hidden" name="id_feed" class="id-feed">
                     <div class="form-group">
                         <label for="feed-title" class="col-form-label">Tiêu đề:</label>
-                        <input type="text" class="form-control feed_title" id="feed-title">
+                        <input type="text" name="feed_title" class="form-control feed_title" id="feed-title">
                     </div>
                     <div class="form-group">
                         <label for="feed-content" class="col-form-label">Nội dung:</label>
-                        <textarea class="form-control feed_content" id="feed-content"></textarea>
+                        <textarea name="feed_content" class="form-control feed_content" id="feed-content"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="feed-cover" class="col-form-label">Chọn ảnh đính kèm mới:</label>
                         <input type="file" class="form-control" id="feed-cover">
                     </div>
-                </form>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

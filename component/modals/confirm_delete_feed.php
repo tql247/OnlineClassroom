@@ -11,7 +11,7 @@
                 Thao tác này không thể khôi phục, chắc chắn xoá?
             </div>
             <form action="../../service/deleteFeed.php" method="POST">
-                <input class="feed_id" name="feed_id" type="text"></input>
+                <input class="feed_id d-none" name="feed_id" type="text"></input>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
                     <button type="submit" class="btn btn-danger">Xoá</button>

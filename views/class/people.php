@@ -34,15 +34,14 @@
                     <br>
                     <div>
                         <div class="mb-5">
-                            <div class="mb-3">
-                                <form action="../../service/inviteStudent.php" method="POST" class="form-inline d-flex">
-                                    <input type="text" name="class_id" class="d-none" value="<?= $_SESSION["class_id"] ?>">
-                                    <input name="student_email" class="flex-grow form-control mr-sm-2" type="Add" placeholder="Email học viên" aria-label="Add">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Thêm học viên</button>
-                                </form>
-                            </div>
-                            <?php require("../../component/student_peding.php") ?>
-                            <hr>
+                            <?php
+                            if (isset($_SESSION['Admin']) || isset($_SESSION['Teacher'])) {
+                                require("../../component/invite_student.php");
+                                require("../../component/student_peding.php");
+                                echo "<hr>";
+                            }
+                            ?>
+
                             <?php require("../../component/list_student.php")  ?>
                         </div>
                     </div>
@@ -54,7 +53,7 @@
 
     <!-- Modal Group-->
     <?php require("../../component/modals/confirm_kick.php") ?>
-    
+
     <?php require("../../component/modals/confirm_allow_join_class.php") ?>
     <?php require("../../component/modals/confirm_disallow_join_class.php") ?>
     <!-- Modal Group-->
