@@ -30,12 +30,13 @@
                     <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
                 </div>
             </div>
-
             <div class="app-view-controll">
                 <h3>Danh sách lớp học</h3>
-                <form action="../../service/inviteStudent.php" method="POST" class="form-inline d-flex">
-                    <input type="text" name="class_id" class="d-none" value="<?= $_SESSION["class_id"] ?>">
-                    <input name="student_email" class="flex-grow form-control mr-sm-2" type="Add" placeholder="Code">
+                <form action="../../service/requestJoinClass.php" method="POST" class="form-inline d-flex">
+                    <?php session_start(); ?>
+                    <input type="text" name="user_id" class="d-none" value="<?= $_SESSION["Id_User"] ?>">
+                    <?php session_abort(); ?>
+                    <input name="class_code" class="flex-grow form-control mr-sm-2" type="Add" placeholder="Code">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tham gia lớp</button>
                 </form>
                 <br>
