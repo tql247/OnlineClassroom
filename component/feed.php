@@ -1,16 +1,10 @@
 <div class="list-group d-centroid">
     <?php
-    session_start();
-    require_once('../../connection/connector.php');
-    if (isset($_REQUEST['class_id'])) {
-        $_SESSION["class_id"] = $_REQUEST['class_id'];
-    }
-
     $list_feed = $conn->query("SELECT * FROM feed WHERE `class_id` = " .$_SESSION['class_id']);
     while ($list_feed->num_rows > 0 && $feed = $list_feed->fetch_assoc()) {
 
     ?>
-        <div id="feed_id_<?= $feed["id"] ?>" class="feed-item list-group-item flex-column align-items-start w-100">
+        <div id="feed_id_<?= $feed["id"] ?>" class="mb-5 feed-item list-group-item flex-column align-items-start w-100">
             <div class="w-100 mb-3">
                 <h4 class="mb-1 feed_title"><strong><?= $feed["title"] ?></strong></h4>
                 <!-- <small>Thời gian đăng</small> -->
@@ -19,7 +13,7 @@
                         <span type="button" data-toggle="modal" data-whatever="<?= $feed["id"] ?>" data-target="#editFeed" class="material-icons hv-3d">
                             create
                         </span>
-                        <span type="button" data-toggle="modal" data-whatever="" data-target="#confirmDeleteFeed" class="material-icons hv-3d c-danger">
+                        <span type="button" data-toggle="modal" data-whatever="<?= $feed["id"] ?>" data-target="#confirmDeleteFeed" class="material-icons hv-3d c-danger">
                             delete_forever
                         </span>
                     <?php } ?>

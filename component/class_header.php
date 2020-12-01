@@ -6,5 +6,16 @@
             </span>
         </a>
     </div>
-    <a href="../../service/logout.php" class="no-decor"><div class="controll logout-btn">Đăng xuất</div></a>
+    <a href="../../service/logout.php" class="no-decor">
+        <div class="controll logout-btn">Đăng xuất</div>
+    </a>
 </div>
+
+<?php
+session_start();
+require_once('../../connection/connector.php');
+if (isset($_REQUEST['class_id'])) {
+    $_SESSION["class_id"] = $_REQUEST['class_id'];
+
+}
+?>

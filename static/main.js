@@ -64,3 +64,10 @@ $('.set-role').on('change', function(e){
   $("#confirmSetRole").modal()
 });
 
+$("#confirmDeleteFeed").on("show.bs.modal", function (event) {
+  var button = $(event.relatedTarget);
+  var recipient = button.data("whatever");
+  var modal = $(this);
+  modal.find(".feed_id").val(recipient);
+});
+

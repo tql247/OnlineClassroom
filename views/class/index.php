@@ -18,7 +18,7 @@
 <body>
     
     <main class="container">
-        <?php require("../../component/class_header.php") ?>
+        <?php require("../../component/class_header.php"); ?>
         <br>
         <div class="app-view">
             <div class="app-view-controll w-100">

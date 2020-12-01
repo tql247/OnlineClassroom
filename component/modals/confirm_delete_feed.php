@@ -10,10 +10,13 @@
             <div class="modal-body">
                 Thao tác này không thể khôi phục, chắc chắn xoá?
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
-                <button type="button" class="btn btn-danger">Xoá</button>
-            </div>
+            <form action="../../service/deleteFeed.php" method="POST">
+                <input class="feed_id" name="feed_id" type="text"></input>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                    <button type="submit" class="btn btn-danger">Xoá</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
