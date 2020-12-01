@@ -61,6 +61,7 @@ $('.set-role').on('change', function(e){
   $("#confirmSetRole").find(".target-set-role").text(targetName);
   $("#confirmSetRole").find(".target-user").val(targetUserId);
   $("#confirmSetRole").find(".set-role-name").text(data);
+  $("#confirmSetRole").find(".role-user").val(data);
   $("#confirmSetRole").modal()
 });
 

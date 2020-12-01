@@ -79,19 +79,22 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="confirmSetRoleLabel">Xoá khoá học?</h5>
+					<h5 class="modal-title" id="confirmSetRoleLabel">Xác nhận?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-				</div>
-				<input type="text" class="target-user">
-				<div class="modal-body">
-					Thao tác này không thể hoàn lại, chắc chắn cấp cho <span class="c-danger target-set-role"></span> quyền <span class="c-danger set-role-name"></span>?
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-					<button type="button" class="btn btn-danger">Xoá</button>
-				</div>
+				<form method="POST" action="../../service/updateRole.php">
+					</div>
+					<input type="hidden" class="target-user" name="id_user">
+					<input type="hidden" class="role-user" name="role_user">
+					<div class="modal-body">
+						Thao tác này không thể hoàn lại, chắc chắn cấp cho <span class="c-danger target-set-role"></span> quyền <span class="c-danger set-role-name"></span>?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+						<button type="submit" class="btn btn-danger">Xác Nhận</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
