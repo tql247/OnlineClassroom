@@ -2,7 +2,11 @@
     <?php
     require_once('../../connection/connector.php');
 
-    $list_class = $conn->query("SELECT * FROM class");
+    if (isset($_SESSION["Teacher"])) {
+        $list_class = $conn->query("SELECT * FROM user_class WHERE `user_id` = " . $_SESSION["Id_User"]);
+    } else {
+        $list_class = $conn->query("SELECT * FROM class");
+    }
     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
     ?>
         <div class="card card-item" id="class_id_<?= $class["id"] ?>">
