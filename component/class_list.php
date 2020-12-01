@@ -1,9 +1,28 @@
 <div class="list-card">
     <?php
     require_once('../../connection/connector.php');
-
+    session_start();
     if (isset($_SESSION["Teacher"])) {
-        $list_class = $conn->query("SELECT * FROM user_class WHERE `user_id` = " . $_SESSION["Id_User"]);
+        $list_class = $conn->query("SELECT * FROM class
+                                    WHERE `id` in (
+                                        SELECT `class_id` FROM user_class
+                                        WHERE `user_id` = " . $_SESSION["Id_User"] . 
+                                        " AND `user_id` in (
+                                            SELECT `id` FROM user
+                                            WHERE `role` = 'Teacher'
+                                        )
+                                    )");
+    } else if (isset($_SESSION["Student"])) {
+        $list_class = $conn->query("SELECT * FROM class
+                                    WHERE `id` in (
+                                        SELECT `class_id` FROM user_class
+                                        WHERE `user_id` = " . $_SESSION["Id_User"] . 
+                                        " AND `status` = 'c'
+                                        AND `user_id` in (
+                                            SELECT `id` FROM user
+                                            WHERE `role` = 'Student'
+                                        )
+                                    )");
     } else {
         $list_class = $conn->query("SELECT * FROM class");
     }

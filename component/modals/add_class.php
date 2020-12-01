@@ -33,11 +33,10 @@
                     </div>
             </div>
             <div class="modal-footer">
-
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
                 <button type="submit" class="btn btn-primary">Thêm</button>
-
             </div>
+            <input type="text" value="<?= $_SESSION["Id_User"]?>" name="id_user">
             </form>
 
         </div>
