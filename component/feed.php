@@ -60,16 +60,20 @@
                         <?php } } } ?>
                     </div>
                     <div class="new-cmt">
+                        <form action="../../service/addComment.php" method="POST">
                         <div class="input-group mb-1">
-                            <input type="text" class="form-control" placeholder="Nhập thảo luận mới" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" name="content_comment"  class="form-control" placeholder="Nhập thảo luận mới" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="hidden" name="id_feed" value="<?= $feed['id']?>">
+                            <input type="hidden" name="id_user_current" value="<?= $_SESSION["Id_User"] ?>">
                             <div class="input-group-append">
-                                <button class="btn btn-secondary x-center" type="button">
+                                <button class="btn btn-secondary x-center" type="submit">
                                     <span class="material-icons">
                                         send
                                     </span>
                                 </button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
