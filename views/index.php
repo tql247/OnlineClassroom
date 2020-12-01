@@ -1,14 +1,14 @@
 <?php
-	session_start();
+    session_start();
 		if (isset($_SESSION['isLogin'])) {
 			if(isset($_SESSION['Admin'])) {
-                // header("Location: login.php");
+                header("Location: ./admin");
             } else if (isset($_SESSION['Teacher'])) {
-                // header("Location: login.php");
+                header("Location: ./teacher");
             } else {
-                // header("Location: login.php");
+                header("Location: ./student/");
             }
 		} else {
-            // header("Location: login.php");
+            header("Location: ./account/login.php");
 		}
 ?>

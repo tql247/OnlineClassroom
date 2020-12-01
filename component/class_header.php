@@ -6,5 +6,5 @@
             </span>
         </a>
     </div>
-    <div class="controll logout-btn">Đăng xuất</div>
+    <a href="../../service/logout.php" class="no-decor"><div class="controll logout-btn">Đăng xuất</div></a>
 </div>

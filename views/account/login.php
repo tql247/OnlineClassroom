@@ -9,7 +9,7 @@
 </head>
 <body class="centroid">
     <div class="loginbox">
-        <form>
+        <form action="../../service/login.php" method="POST">
             <div class="imgcontainer">
                 <img src="../../storage/images/avatar.png" alt="Avatar" class="avatar">
                 <h1>ĐĂNG NHẬP</h1> </br>
@@ -22,7 +22,7 @@
 
             <div class="form-group">
                     <label for="password">Mật khẩu</label>
-                    <input type="password" class="form-control" name="pass" id="password" placeholder="Mật khẩu">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Mật khẩu">
             </div>
             <a href="forgotpwd.php" >Quên mật khẩu</a>
             </br>

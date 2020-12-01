@@ -27,7 +27,7 @@
                     <div class="controll active">Sinh viên đang chờ duyệt</div>
                     <br>
                     <br>
-                    <div class="controll logout-btn">Đăng xuất</div>
+                    <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
                 </div>
             </div>
 

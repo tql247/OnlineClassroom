@@ -11,7 +11,7 @@
 
 <body class="d-middle">
     <div class="registerbox m-5">
-        <form>
+        <form action="../../service/signin.php" method="POST">
             <div class="registerbox-header">
                 <div>
                     <img src="../../storage/images/avatar.png" alt="Avatar" class="avatar">
@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label for="Email">Địa chỉ Email</label>
-                <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp" placeholder="Nhập email">
+                <input type="email" class="form-control" name="email" id="Email" aria-describedby="emailHelp" placeholder="Nhập email">
             </div>
             <div class="form-group">
                 <label for="phone">Số điện thoại</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="Password">Mật khẩu</label>
-                <input type="password" class="form-control" name="Password" id="Password" placeholder="Mật khẩu">
+                <input type="password" class="form-control" name="password" id="Password" placeholder="Mật khẩu">
             </div>
             <div>
                 <input type="submit" class="lam-input account-btn hv-3d-lam bg-lam" name="" value="Đăng kí">

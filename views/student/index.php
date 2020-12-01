@@ -29,7 +29,7 @@
                     <div class="controll"><a class="no-decor" href="class_pending.php">Lớp học đang chờ duyệt</a></div>
                     <br>
                     <br>
-                    <div class="controll logout-btn">Đăng xuất</div>
+                    <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
                 </div>
             </div>
 

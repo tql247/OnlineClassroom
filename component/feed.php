@@ -1,5 +1,6 @@
 <div class="list-group d-centroid">
     <?php
+    session_start();
     require_once('../../connection/connector.php');
 
     $list_feed = $conn->query("SELECT * FROM feed");
@@ -11,7 +12,7 @@
                 <h4 class="mb-1 feed_title"><strong><?= $feed["title"] ?></strong></h4>
                 <!-- <small>Thời gian đăng</small> -->
                 <div class="float-right btn-float-right">
-                    <?php if (1) { ?>
+                    <?php if (isset($_SESSION['Admin']) || isset($_SESSION['Teacher'])) { ?>
                         <span type="button" data-toggle="modal" data-whatever="<?= $feed["id"] ?>" data-target="#editFeed" class="material-icons hv-3d">
                             create
                         </span>
@@ -37,22 +38,20 @@
                         <?php
                         $list_cmt = $conn->query("SELECT * FROM comment WHERE feed_id = " . $feed["id"]);
                         while ($list_cmt->num_rows > 0 && $cmt = $list_cmt->fetch_assoc()) {
+                            $user_cmt = $conn->query("SELECT * FROM user WHERE `id` = " . $cmt["user_id"]);
+                            if ($user_cmt->num_rows > 0) {
+                            $user_cmt_fullname = $user_cmt->fetch_assoc();
                         ?>
                             <div class="cmt">
                                 <div class="list-group-item flex-column align-items-start mb-3">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <?php
-                                            $user_cmt = $conn->query("SELECT * FROM user");
-                                            $user_cmt_fullname = $user_cmt->fetch_assoc();
-                                        ?>
                                         <h6><strong>
                                         <?= $user_cmt_fullname["fullname"] ?>
                                         </strong></h6>
-                                        <?php if (1) { ?>
+                                        <?php if (isset($_SESSION['Admin']) || isset($_SESSION['Teacher'])) { ?>
                                             <span type="button" data-toggle="modal" data-target="#confirmDeleteCMT" data-whatever="" class="noselect c-danger material-icons btn-float-right hv-3d">
                                                 delete_forever
                                             </span>
-                                        <?php } ?>
                                     </div>
                                     <div>
                                         <span>
@@ -61,7 +60,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php } } } ?>
                     </div>
                     <div class="new-cmt">
                         <div class="input-group mb-1">

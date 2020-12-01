@@ -27,7 +27,7 @@
 					<div class="controll"><a class="no-decor" href="classmanagement.php">Quản lý lớp học</a></div>
 					<br>
 					<br>
-					<div class="controll logout-btn">Đăng xuất</div>
+                    <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
 				</div>
 			</div>
 

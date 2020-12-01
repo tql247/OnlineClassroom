@@ -1,29 +1,33 @@
-<?php
-	$Name_Account = $_REQUEST['Name_Account'];
-	$Pw = $_REQUEST['Password'];
-	
-	require_once('connFilm.php');
+<?php 
+	require_once('../connection/connector.php');
+	$username= $_POST["username"];
+	$password= $_REQUEST["password"];
 
-	$sql = "Select * From Account Where Name_Account like '" . $Name_Account . "' and Password like '" . $Pw . "'";
-	$result = $connFilm->query($sql);
+	$sql = "SELECT * FROM user
+			WHERE `username` = '$username'";
 
-	if ($result->num_rows > 0) {
-		session_start();
 
-		$_SESSION['isLogin'] = true;
-
-		$account = $result->fetch_assoc();
-		if ($account['Role'] == 'Admin') {
-			$_SESSION['Admin'] = true;
-		} else if ($account['Role']){
-			$_SESSION['Student'] = true;
-			$_SESSION['Id_User'] = $account['Id_Account'];
+	if($conn->query($sql) ===False){
+		die("ERROR:". $sql. $conn->error );
+	}else if ($user = $conn->query($sql)->fetch_assoc()) {
+		if (password_verify($password, $user["password"])) {
+			session_start();
+			if ($user['role'] == 'Admin') {
+				echo 'admin';
+				$_SESSION['Admin'] = true;
+			} else if (($user['role'] == 'Teacher')){
+				$_SESSION['Teacher'] = true;
+				echo 'admin';
+			} else {
+				$_SESSION['Student'] = true;
+				echo 'Student';
+			}
+			$_SESSION['isLogin'] = true;
+			$_SESSION['Id_User'] = $user['id'];
+			header("Location: ../views/index.php");
 		} else {
-			$_SESSION['Teacher'] = true;
-			$_SESSION['Id_User'] = $account['Id_Account'];
+			echo 'fail';
+	        // header("Location: ../views/account/login.php");
 		}
-		header("Location: ../views/");
-	} else
-		header("Location: login.php");
-	
-	$connFilm->close();
+    }
+?>
