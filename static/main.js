@@ -108,3 +108,11 @@ $("#confirmKickStudent").on("show.bs.modal", function (event) {
   modal.find(".user_id").val(userId);
   modal.find(".class_id").val(classId);
 });
+
+
+$("#confirmDeleteCMT").on("show.bs.modal", function (event) {
+  var button = $(event.relatedTarget);
+  var cmtId = button.data("cmt-id");
+  var modal = $(this);
+  modal.find(".cmt_id").val(cmtId);
+});

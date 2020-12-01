@@ -46,9 +46,10 @@
                                         <?= $user_cmt_fullname["fullname"] ?>
                                         </strong></h6>
                                         <?php if (isset($_SESSION['Admin']) || isset($_SESSION['Teacher'])) { ?>
-                                            <span type="button" data-toggle="modal" data-target="#confirmDeleteCMT" data-whatever="" class="noselect c-danger material-icons btn-float-right hv-3d">
+                                            <span type="button" data-toggle="modal" data-target="#confirmDeleteCMT" data-cmt-id="<?= $cmt["id"] ?>" class="c-danger material-icons btn-float-right hv-3d">
                                                 delete_forever
                                             </span>
+                                        <?php } ?>
                                     </div>
                                     <div>
                                         <span>
@@ -57,7 +58,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php } } } ?>
+                        <?php } } ?>
                     </div>
                     <div class="new-cmt">
                         <form action="../../service/addComment.php" method="POST">

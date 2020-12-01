@@ -27,8 +27,8 @@
                         <input type="text" name="class_code_update" class="form-control class-code class_code_update">
                     </div>
                     <div class="form-group">
-                        <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
-                        <input type="file" class="form-control class-cover class_cover_update">
+                        <label for="class_cover_update" class="col-form-label">Chọn ảnh bìa</label>
+                        <input type="file" class="form-control class_cover_update">
                     </div>
 
                 </div>
