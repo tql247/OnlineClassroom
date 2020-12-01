@@ -4,6 +4,9 @@
 	$sql = "DELETE FROM class WHERE id= '$id'";
 	if($conn->query($sql) ===False){
 		die("ERROR:". $sql. $conn->error );
-	}else{ header("Location: ../views/admin/classmanagement.php?");}
-	
+	}else if (isset($_SERVER["HTTP_REFERER"])) {
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    } else {
+        die("ERROR:" . $_SERVER["HTTP_REFERER"]);
+    }
 ?>

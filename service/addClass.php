@@ -8,7 +8,10 @@
 	$sql = "INSERT INTO class(class_name,class_code,class_room,course_name) VALUES ('$name','$code','$room','$code') ";
 	if($conn->query($sql) ===False){
 		die("ERROR:". $sql. $conn->error );
-	}else{ header("Location: ../views/admin/classmanagement.php?");}
-
+	}else if (isset($_SERVER["HTTP_REFERER"])) {
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+    } else {
+        die("ERROR:" . $_SERVER["HTTP_REFERER"]);
+    }
 
 ?>
