@@ -127,6 +127,11 @@
   justify-content: center;
 }
 
+.d-middle-y {
+  display: flex;
+  align-items: center;
+}
+
 .d-centroid {
   display: flex;
   justify-content: center;

@@ -23,8 +23,7 @@
                 <h3>Teacher</h3>
                 <br>
                 <div>
-                    <div class="controll"><a class="no-decor" href="index.php">Lớp học đã tạo</a></div>
-                    <div class="controll active">Sinh viên đang chờ duyệt</div>
+                    <div class="controll">Lớp học đã tạo</a></div>
                     <br>
                     <br>
                     <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
@@ -40,7 +39,7 @@
                 <?php
                 require_once('../../connection/connector.php');
 
-                $list_user = $conn->query("SELECT * FROM user");
+                $list_user = $conn->query("SELECT * FROM student_pending WHERE `class_id` = " );
                 while ($list_user->num_rows > 0 && $user = $list_user->fetch_assoc()) {
                 ?>
 
@@ -77,45 +76,8 @@
 
     
     <!-- Modal Group-->
-    <div class="modal fade" id="confirmAllowJoinClass" tabindex="-1" role="dialog" aria-labelledby="confirmJoinClassLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmJoinClassLabel">Cho phép sinh viên tham gia lớp học?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thao tác này không thể hoàn lại, chắc chắn cho phép tham gia?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-info">Cho phép</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="confirmDisallowJoinClass" tabindex="-1" role="dialog" aria-labelledby="confirmDisallowJoinClassLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDisallowJoinClassLabel">Từ chối cho sinh viên tham gia lớp học?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thao tác này không thể hoàn lại, chắc chắn không cho tham gia?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-danger">Từ chối</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require("../../component/modals/confirm_allow_join_class.php") ?>
+    <?php require("../../component/modals/confirm_disallow_join_class.php") ?>
     <!-- Modal Group-->
 
     <!-- Bootstrap CDN -->

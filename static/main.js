@@ -72,3 +72,22 @@ $("#confirmDeleteFeed").on("show.bs.modal", function (event) {
   modal.find(".feed_id").val(recipient);
 });
 
+
+$("#confirmAllowJoinClass").on("show.bs.modal", function (event) {
+  var button = $(event.relatedTarget);
+  var userId = button.data("user-id");
+  var classId = button.data("class-id");
+  var modal = $(this);
+  modal.find(".user_id").val(userId);
+  modal.find(".class_id").val(classId);
+});
+
+$("#confirmDisallowJoinClass").on("show.bs.modal", function (event) {
+  var button = $(event.relatedTarget);
+  var userId = button.data("user-id");
+  var classId = button.data("class-id");
+  var modal = $(this);
+  modal.find(".user_id").val(userId);
+  modal.find(".class_id").val(classId);
+});
+

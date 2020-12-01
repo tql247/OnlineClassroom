@@ -26,7 +26,7 @@
                 <br>
                 <div>
                     <div class="controll active">Lớp học đã tạo</div>
-                    <div class="controll"><a class="no-decor" href="student_pending.php">Sinh viên đang chờ duyệt</a></div>
+                    <!-- <div class="controll"><a class="no-decor" href="student_pending.php">Sinh viên đang chờ duyệt</a></div> -->
                     <br>
                     <br>
                     <div class="controll logout-btn"><a href="../../service/logout.php" class="no-decor">Đăng xuất</a></div>
