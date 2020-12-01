@@ -29,7 +29,11 @@
     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
     ?>
         <div class="card card-item" id="class_id_<?= $class["id"] ?>">
-            <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
+            <?php if(isset($class["class_cover"])) { ?>
+                <img class="card-img-top" src="<?= $class["class_cover"] ?>" alt="Card image cap">
+            <?php } else { ?>
+                <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
+            <?php } ?>
             <div class="card-body">
                 <a href="../class/index.php?class_id=<?= $class['id'] ?>" class="no-decor text-success">
                     <h5 class="card-title class_name"><?= $class["class_name"] ?></h5>

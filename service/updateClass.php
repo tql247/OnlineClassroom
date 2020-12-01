@@ -5,8 +5,43 @@
 	$class_code = $_POST["class_code_update"];
 	$class_course = $_POST["class_course_update"];
 	$class_room = $_POST["class_room_update"];
+	// $class_cover = $_POST["class_cover_update"];
+	
+	// if (!isset($class_cover)) {
+	// 	$img=$_FILES['img']; 
+	// 	if($img['name']==''){  
+	// 		echo "<h2>Select an Image Please.</h2>";
+	// 	}
+	// 	else {
+	// 		$filename = $img['tmp_name'];
+	// 		$client_id='e4d17de64fb7066';		// Replace this with your client_id, if you want images to be uploaded under your imgur account
+	// 		$handle = fopen($filename, 'r');
+	// 		$data = fread($handle, filesize($filename));
+	// 		$pvars = array('image' => base64_encode($data));
+	// 		$timeout = 30;
+	// 		$curl = curl_init();
+	// 		curl_setopt($curl, CURLOPT_URL, 'https://api.imgur.com/3/image.json');
+	// 		curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+	// 		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Client-ID ' . $client_id));
+	// 		curl_setopt($curl, CURLOPT_POST, 1);
+	// 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	// 		curl_setopt($curl, CURLOPT_POSTFIELDS, $pvars);
+		
+	// 		$out = curl_exec($curl);
+	// 		curl_close ($curl);
+	// 		$pms = json_decode($out,true);
+	// 		$url=$pms['data']['link'];
+	// 		if($url!=''){
+	// 			$sql = "UPDATE class SET class_name = '$class_name', class_room ='$class_room', class_code ='$class_code', course_name='$class_course', class_cover='$class_cover' WHERE id= '$id'";
+	// 		}
+	// 		else{
+	// 			echo "<div>".$pms['data']['error']."</div>";
+	// 		} 
+	// 	}
+	// } else {
+	// 	$sql = "UPDATE class SET class_name = '$class_name', class_room ='$class_room', class_code ='$class_code', course_name='$class_course' WHERE id= '$id'";
+	// }
 
-	$sql = "UPDATE class SET class_name = '$class_name', class_room ='$class_room', class_code ='$class_code', course_name='$class_course' WHERE id= '$id'";
 	if($conn->query($sql) ===False){
 		die("ERROR:". $sql. $conn->error );
 	}else if (isset($_SERVER["HTTP_REFERER"])) {
