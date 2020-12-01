@@ -10,10 +10,14 @@
             <div class="modal-body">
                 Thao tác này không thể khôi phục, chắc chắn đuổi học viên?
             </div>
+            <form action="../../service/kickStudent.php" method="POST">
+            <input type="text" class="class_id d-none" name="class_id" value="<?= $_SESSION["class_id"] ?>">
+            <input type="text" class="user_id d-none" name="user_id">
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                <button type="button" class="btn btn-danger">Đuổi</button>
+                <button type="submit" class="btn btn-danger">Đuổi</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

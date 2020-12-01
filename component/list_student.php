@@ -24,7 +24,7 @@
             <div>
                 <?php
                 if (isset($_SESSION['Admin']) || isset($_SESSION['Teacher'])) { ?>
-                    <button class="btn btn-danger" type="button" data-target="#confirmKickStudent" data-whatever="<?= $user["id"] . '-' . $_SESSION["class_id"] ?>" data-toggle="modal">
+                    <button class="btn btn-danger" type="button" data-target="#confirmKickStudent" data-user-id="<?= $user["id"]?>" data-class-id="<?= $_SESSION["class_id"] ?>" data-toggle="modal">
                         Đuổi
                     </button>
                 <?php } ?>

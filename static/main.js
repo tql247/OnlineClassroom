@@ -4,7 +4,7 @@ $("#editClass").on("show.bs.modal", function (event) {
   var modal = $(this);
   // modal.find(".modal-title").text("New message to " + recipient)
   var class_ = $("#class_id_" + recipient);
-  var new_class_name= class_.find(".class_name").text();
+  var new_class_name = class_.find(".class_name").text();
   var new_class_course = class_.find(".course_name").text();
   var new_class_room = class_.find(".class_room").text();
   var new_class_code = class_.find(".class_code").text();
@@ -13,9 +13,7 @@ $("#editClass").on("show.bs.modal", function (event) {
   modal.find(".class_room_update").val(new_class_room);
   modal.find(".class_code_update").val(new_class_code);
   modal.find(".id_class").val(recipient);
-  
 });
-
 
 $("#editFeed").on("show.bs.modal", function (event) {
   var button = $(event.relatedTarget);
@@ -46,23 +44,26 @@ $("#confirmKickStudent").on("show.bs.modal", function (event) {
   modal.find(".modal-title").text("New message to " + recipient);
 });
 
-$(".open-extend-controll").on("click", function(e) {
-  if($(e.target).next().hasClass("active")) {
+$(".open-extend-controll").on("click", function (e) {
+  if ($(e.target).next().hasClass("active")) {
     $(e.target).next().removeClass("active");
   } else {
     $(e.target).next().addClass("active");
   }
 });
 
-$('.set-role').on('change', function(e){
-  let data = $(e.target).find('option:selected').val();
+$(".set-role").on("change", function (e) {
+  let data = $(e.target).find("option:selected").val();
   const targetName = $(e.target).parent().find(".target_user").text().trim();
-  const targetUserId = $(e.target).parent().find(".target_user").data("user-id");
+  const targetUserId = $(e.target)
+    .parent()
+    .find(".target_user")
+    .data("user-id");
   $("#confirmSetRole").find(".target-set-role").text(targetName);
   $("#confirmSetRole").find(".target-user").val(targetUserId);
   $("#confirmSetRole").find(".set-role-name").text(data);
   $("#confirmSetRole").find(".role-user").val(data);
-  $("#confirmSetRole").modal()
+  $("#confirmSetRole").modal();
 });
 
 $("#confirmDeleteFeed").on("show.bs.modal", function (event) {
@@ -71,7 +72,6 @@ $("#confirmDeleteFeed").on("show.bs.modal", function (event) {
   var modal = $(this);
   modal.find(".feed_id").val(recipient);
 });
-
 
 $("#confirmAllowJoinClass").on("show.bs.modal", function (event) {
   var button = $(event.relatedTarget);
@@ -91,7 +91,6 @@ $("#confirmDisallowJoinClass").on("show.bs.modal", function (event) {
   modal.find(".class_id").val(classId);
 });
 
-
 $("#confirmJoinClass").on("show.bs.modal", function (event) {
   var button = $(event.relatedTarget);
   var userId = button.data("user-id");
@@ -101,3 +100,11 @@ $("#confirmJoinClass").on("show.bs.modal", function (event) {
   modal.find(".class_id").val(classId);
 });
 
+$("#confirmKickStudent").on("show.bs.modal", function (event) {
+  var button = $(event.relatedTarget);
+  var userId = button.data("user-id");
+  var classId = button.data("class-id");
+  var modal = $(this);
+  modal.find(".user_id").val(userId);
+  modal.find(".class_id").val(classId);
+});
