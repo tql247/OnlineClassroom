@@ -16,8 +16,6 @@
 </head>
 
 <body>
-
-
     <main class="container">
         <br>
         <div class="app-view">
@@ -45,152 +43,16 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
 
-                <div class="list-card">
-                    <?php
-                    require_once('../../connection/connector.php');
-
-                    $list_class = $conn->query("SELECT * FROM class");
-                    while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
-                    ?>
-                        <div class="card card-item" id="class_id_<?= $class["id"] ?>" style="width: 18rem;">
-                            <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title class_name"><?= $class["class_name"] ?></h5>
-
-                                <div>
-                                    <div >Môn: <span class="course_name"><?= $class["course_name"] ?> </span></div>
-                                    <div>Phòng: <span class="class_room"> <?= $class["class_room"]?></span></div>
-                                    <div>Code: <span class="class_code" ><?= $class["class_code"] ?></span></div>
-                                </div>
-                                <div class="btn-full mt-1">
-                                        <button type="button" name="idClass " class="btn btn-warning" data-toggle="modal" data-target="#editClass" data-whatever="<?= $class["id"] ?>">
-                                            Chỉnh sửa
-                                        </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteClass" data-whatever="<?= $class["id"] ?>">
-                                        Xoá
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
+               <?php require("../../component/class_list.php") ?>
             </div>
         </div>
     </main>
 
-
     <!-- Modal Group-->
-    <div class="modal fade" id="addClass" tabindex="-1" role="dialog" aria-labelledby="addClassModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addClassModalLabel">Thông tin lớp học mới</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                
-                <div class="modal-body">
-                <form action="../../service/addClass.php" method="POST">    
-                        
-                        <div class="form-group">
-                            <label for="class-name" class="col-form-label">Tên lớp:</label>
-                            <input type="text" name="class_name" class="form-control" id="class-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="course-name" class="col-form-label">Tên môn:</label>
-                            <input type="text" name="course_name" class="form-control" id="course-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="class-room" class="col-form-label">Tên phòng:</label>
-                            <input type="text" name="class_room" class="form-control" id="class-room">
-                        </div>
-                        <div class="form-group">
-                            <label for="class-code" class="col-form-label">CODE:</label>
-                            <input type="text" name="class_code" class="form-control" id="class-code">
-                        </div>
-                        <div class="form-group">
-                            <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
-                            <input type="file" class="form-control" id="class-cover">
-                        </div>
-                    </div>
-                <div class="modal-footer">
-                    
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="submit" class="btn btn-primary">Thêm</button>
-                
-                </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="editClass" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabel">Nội dung cập nhật</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="../../service/updateClass.php" method="POST" >
-                <div class="modal-body">
-                        <input type="hidden" class="id_class" name="id_class" value="">
-                        <div class="form-group">
-                            <label for="class-name" class="col-form-label ">Tên lớp:</label>
-                            <input type="text" name="class_name_update" class="form-control class-name class_name_update">
-                        </div>
-                        <div class="form-group">
-                            <label for="course-name" class="col-form-label">Tên môn:</label>
-                            <input type="text" name="class_course_update" class="form-control course-name class_course_update" >
-                        </div>
-                        <div class="form-group">
-                            <label for="class-room" class="col-form-label">Tên phòng:</label>
-                            <input type="text" name="class_room_update" class="form-control class-room class_room_update" >
-                        </div>
-                        <div class="form-group">
-                            <label for="class-code" class="col-form-label">CODE:</label>
-                            <input type="text" name="class_code_update" class="form-control class-code class_code_update" >
-                        </div>
-                        <div class="form-group">
-                            <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
-                            <input type="file" class="form-control class-cover class_cover_update" >
-                        </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <button type="submit" class="btn btn-primary">Sửa</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="confirmDeleteClass" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteClassLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDeleteClassLabel">Xoá khoá học?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Thao tác này không thể khôi phục, chắc chắn xoá?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                    <form method="POST" action="../../service/deleteClass.php">
-                        <input type="hidden" class="id_class_delete" name="id_class_delete">
-                        <button type="submit" class="btn btn-danger">Xoá</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require("../../component/modals/add_class.php");
+          require("../../component/modals/edit_class.php");
+          require("../../component/modals/confirm_delete_class.php");
+    ?>
     <!-- Modal Group-->
 
 

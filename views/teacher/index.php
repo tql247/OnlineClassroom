@@ -49,7 +49,7 @@
                     <?php
                     require_once('../../connection/connector.php');
 
-                    $list_class = $conn->query("SELECT * FROM user_class WHERE `user_id` = 3");
+                    $list_class = $conn->query("SELECT * FROM user_class WHERE `class_id` = 1");
                     while ($list_class->num_rows > 0 && $class = $list_class->fetch_assoc()) {
                         $class_detail = $conn->query("SELECT * FROM class WHERE `id` = " . $class["class_id"])->fetch_assoc();
                     ?>
@@ -73,8 +73,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- $_REQUEST['Id_Film']; -->
-                        <!-- <a href="infor.php?Id_Film=<?= $row['Id_Film'] ?>"><img class="relate_idx" src="<?= $img['Cover_address']?>"></a> -->
                     <?php } ?>
                 </div>
             </div>

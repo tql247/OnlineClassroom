@@ -2,8 +2,11 @@
     <?php
     session_start();
     require_once('../../connection/connector.php');
+    if (isset($_REQUEST['class_id'])) {
+        $_SESSION["class_id"] = $_REQUEST['class_id'];
+    }
 
-    $list_feed = $conn->query("SELECT * FROM feed");
+    $list_feed = $conn->query("SELECT * FROM feed WHERE `class_id` = " .$_SESSION['class_id']);
     while ($list_feed->num_rows > 0 && $feed = $list_feed->fetch_assoc()) {
 
     ?>

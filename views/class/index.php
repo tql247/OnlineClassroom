@@ -16,12 +16,12 @@
 </head>
 
 <body>
-
+    
     <main class="container">
         <?php require("../../component/class_header.php") ?>
         <br>
         <div class="app-view">
-            <div class="app-view-controll">
+            <div class="app-view-controll w-100">
                 <?php require("../../component/class_cover.php") ?>
                 <br>
                 <div class="content">

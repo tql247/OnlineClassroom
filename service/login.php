@@ -17,7 +17,7 @@
 				$_SESSION['Admin'] = true;
 			} else if (($user['role'] == 'Teacher')){
 				$_SESSION['Teacher'] = true;
-				echo 'admin';
+				echo 'teacher';
 			} else {
 				$_SESSION['Student'] = true;
 				echo 'Student';

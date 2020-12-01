@@ -21,6 +21,8 @@
                         <label for="class-cover" class="col-form-label">Chọn ảnh đính kèm</label>
                         <input type="file" class="form-control" id="class-cover">
                     </div>
+                    <!-- Dưới đây là id của class, lấy thông số này bổ sung vào bảng feed -->
+                    <div class="class_id"></div>
                 </form>
             </div>
             <div class="modal-footer">

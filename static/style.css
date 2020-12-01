@@ -5,7 +5,7 @@
 
 .app-bar {
   margin-right: 10px;
-  min-width: 200px;
+  width: 200px;
 }
 
 .app-view-controll {
@@ -47,6 +47,7 @@
 
 .card-item {
   margin: 10px;
+  width: 282px;
 }
 
 .btn-full {
@@ -336,5 +337,5 @@ hv-w:hover {
 }
 
 .w-100{
-  width: 100%;
+  width: 100% !important;
 }
