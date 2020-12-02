@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="../../service/addFeed.php" method="POST">
+            <form action="../../service/addFeed.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="class-name" class="col-form-label">Tiêu đề:</label>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="class-cover" class="col-form-label">Chọn ảnh đính kèm</label>
-                        <input type="file" class="form-control" name="img-cover">
+                        <input type="file" class="form-control" accept="image/*" name="img">
                     </div>
                 </div>
                 <input type="text" name="class-id" class="d-none" value="<?= $_SESSION["class_id"] ?>">

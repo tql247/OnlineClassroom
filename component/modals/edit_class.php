@@ -27,7 +27,7 @@
                         <input type="text" name="class_code_update" class="form-control class-code class_code_update">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="class_cover_update" class="form-control class-code class_cover_update">
+                        <input type="text" name="class_cover_update" class="form-control class-code class_cover_update d-none">
                         <label for="class_cover_update" class="col-form-label">Chọn ảnh bìa</label>
                         <input type="file" name="img" class="form-control">
                     </div>

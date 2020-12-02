@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="class-cover" class="col-form-label">Chọn ảnh bìa</label>
-                        <input type="file"  name="img"  accept="image/*" class="form-control" id="class-cover">
+                        <input type="file"  name="img" accept="image/*" class="form-control" id="class-cover">
                     </div>
                 </div>
                 <input type="text" value="<?= $_SESSION["Id_User"] ?>" name="id_user" class="d-none">

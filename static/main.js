@@ -3,10 +3,10 @@ $("#editClass").on("show.bs.modal", function (event) {
   var recipient = button.data("whatever");
   var modal = $(this);
   var class_ = $("#class_id_" + recipient);
-  var new_class_name = class_.find(".class_name").text();
-  var new_class_course = class_.find(".course_name").text();
-  var new_class_room = class_.find(".class_room").text();
-  var new_class_code = class_.find(".class_code").text();
+  var new_class_name = class_.find(".class_name").text().trim();
+  var new_class_course = class_.find(".course_name").text().trim();
+  var new_class_room = class_.find(".class_room").text().trim();
+  var new_class_code = class_.find(".class_code").text().trim();
   var new_class_cover = class_.find(".class_cover").attr('src');
   modal.find(".class_name_update").val(new_class_name);
   modal.find(".class_course_update").val(new_class_course);
@@ -23,8 +23,10 @@ $("#editFeed").on("show.bs.modal", function (event) {
   var feed = $("#feed_id_" + recipient);
   var feed_title = feed.find(".feed_title").text().trim();
   var feed_content = feed.find(".feed_content").text().trim();
+  var feed_cover = feed.find(".feed_cover").attr('src');
   modal.find(".feed_title").val(feed_title);
   modal.find(".feed_content").val(feed_content);
+  modal.find(".feed_cover").val(feed_cover);
   modal.find(".id-feed").val(recipient);
 });
 
