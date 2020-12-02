@@ -30,9 +30,9 @@
     ?>
         <div class="card card-item" id="class_id_<?= $class["id"] ?>">
             <?php if(isset($class["class_cover"])) { ?>
-                <img class="card-img-top" src="<?= $class["class_cover"] ?>" alt="Card image cap">
+                <img class="card-img-top class_cover" src="<?= $class["class_cover"] ?>" alt="Card image cap">
             <?php } else { ?>
-                <img class="card-img-top" src="../../storage/images/download.png" alt="Card image cap">
+                <img class="card-img-top class_cover" src="../../storage/images/download.png" alt="Card image cap">
             <?php } ?>
             <div class="card-body">
                 <a href="../class/index.php?class_id=<?= $class['id'] ?>" class="no-decor text-success">

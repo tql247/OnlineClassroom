@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="../../service/addClass.php" method="POST"  enctype="multipart/form-data">
+            <form action="../../service/addClass.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="class-name" class="col-form-label">Tên lớp:</label>

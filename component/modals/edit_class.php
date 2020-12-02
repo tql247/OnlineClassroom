@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="../../service/updateClass.php" method="POST">
+            <form action="../../service/updateClass.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <input type="hidden" class="id_class" name="id_class" value="">
                     <div class="form-group">
@@ -27,8 +27,9 @@
                         <input type="text" name="class_code_update" class="form-control class-code class_code_update">
                     </div>
                     <div class="form-group">
+                        <input type="text" name="class_cover_update" class="form-control class-code class_cover_update">
                         <label for="class_cover_update" class="col-form-label">Chọn ảnh bìa</label>
-                        <input type="file" class="form-control class_cover_update">
+                        <input type="file" name="img" class="form-control">
                     </div>
 
                 </div>
