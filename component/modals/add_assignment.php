@@ -10,27 +10,27 @@
             <form action="../../service/addAssignment.php" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="class-name" class="col-form-label">Tên bài tập:</label>
+                        <label for="assignment-name" class="col-form-label">Tên bài tập:</label>
                         <input type="text" name="feed-title" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="course-name" class="col-form-label">Mô tả:</label>
-                        <textarea class="form-control" name="feed-content"></textarea>
+                        <label for="assignment-name" class="col-form-label">Mô tả:</label>
+                        <textarea class="form-control" name="assignment-name"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="birth">Ngày bắt đầu</label>
-                        <input type="date" id="birth" name="birth" class="lam-input"></br>
+                        <input type="date" id="birth" name="assignment-open" class="lam-input"></br>
                     </div>
                     <div class="form-group">
                         <label for="birth">Ngày kết thúc</label>
-                        <input type="date" id="birth" name="birth" class="lam-input"></br>
+                        <input type="date" id="birth" name="assignment-due" class="lam-input"></br>
                     </div>
                     <div class="form-group">
                         <label for="class-cover" class="col-form-label">Chọn tập tin đính kèm</label>
-                        <input type="file" class="form-control" accept="image/*" name="img">
+                        <input type="file" class="form-control" name="assignmen-attach">
                     </div>
                 </div>
-                <input type="text" name="class-id" class="d-none" value="<?= $_SESSION["class_id"] ?>">
+                <input type="text" name="class_id" class="d-none" value="<?= $_SESSION["class_id"] ?>">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
                     <button type="submit" class="btn btn-primary">Thêm</button>

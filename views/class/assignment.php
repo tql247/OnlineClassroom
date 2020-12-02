@@ -36,8 +36,8 @@
                     <div>
                         <div class="d-middle">
                             <?php require("../../component/add_assignment_btn.php") ?>
-                            <?php require("../../component/assignment_list") ?>                        
                         </div>
+                        <?php require("../../component/assignment_list.php") ?>                   
                     </div>
                 </div>
             </div>
