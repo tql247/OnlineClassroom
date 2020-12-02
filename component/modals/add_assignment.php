@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="class-cover" class="col-form-label">Chọn tập tin đính kèm</label>
-                        <input type="file" class="form-control" name="assignmen-attach">
+                        <input type="file" class="form-control" name="assignment-attach">
                     </div>
                 </div>
                 <input type="text" name="class_id" class="d-none" value="<?= $_SESSION["class_id"] ?>">
