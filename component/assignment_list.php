@@ -11,7 +11,7 @@ while ($list_assignment->num_rows > 0 && $assignment = $list_assignment->fetch_a
                     <?= $assignment["description"] ?>
                 </h6>
             <small>
-                Đính kèm:
+                Đính kèm: <a download href="../../upload_file/<?= $assignment['attach'] ?>"><?= $assignment["attach"] ?></a>
             </small>
             <br>
             <small>Từ <?= $assignment["open"] ?> đến <?= $assignment["due"] ?></small>

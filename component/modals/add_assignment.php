@@ -11,11 +11,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="assignment-name" class="col-form-label">Tên bài tập:</label>
-                        <input type="text" name="feed-title" class="form-control">
+                        <input type="text" name="assignment-title" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="assignment-name" class="col-form-label">Mô tả:</label>
-                        <textarea class="form-control" name="assignment-name"></textarea>
+                        <textarea class="form-control" name="assignment-desc"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="birth">Ngày bắt đầu</label>
